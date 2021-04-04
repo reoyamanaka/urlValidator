@@ -1,7 +1,6 @@
 <?php
     if (isset($_POST["submit"])) {
         $url = $_POST["url"];
-        // echo "<script>alert('$url');</script>";
         
         $errorEmpty = false;
         $errorUrl = false;
@@ -13,7 +12,11 @@
         else if (!filter_var($url, FILTER_VALIDATE_URL)) {
             echo "<span class='formError'>Write a valid url.</span>";
             $errorUrl = true;    
-        } else {
+        } else if (mb_substr($url, 0, 8) != "https://" && mb_substr($url, 0, 7) != "http://") {
+            echo "<span class='formError'>You must include either a http:// or a https://</span>";
+            $errorUrl = true;
+        }
+        else {
             echo "<span class='formSuccess'>Submission successful.</span>";
         }
     } else {
