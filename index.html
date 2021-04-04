@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URL Validator</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <h1>URL Validator</h1>
@@ -13,9 +14,11 @@
         <form action="backendValidation.php" method="post">
             <h2>Enter URL to Validate</h2>
             <h3>Validation rule: must include http or https</h3>
-            <input type="text" placeholder = "Enter URL" />
-            <input type="submit" value="Submit" />
+            <input type="text" id="formUrl" placeholder="Enter URL" />
+            <button type="submit" name="submit" id="urlSubmit">Submit</button>
+            <p class="formMessage"></p>
         </form>
     </div>
+    <script src="frontendValidation.js"></script>
 </body>
 </html>

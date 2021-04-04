@@ -18,3 +18,13 @@ h1 {
 .container h2, .container h3 {
     margin: 0.5em;
 }
+.container .formError {
+    color: red;
+}
+.container .formSuccess {
+    color: green;
+}
+.container .inputError {
+    box-shadow: 0 0 5px red;
+    
+}
